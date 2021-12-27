@@ -5,7 +5,10 @@ import styled from 'styled-components';
 
 export const StyledButtonInstruction = styled.div`
     display: flex;
-    gap: 8px;
+    column-gap: 28px;
+    row-gap: 8px;
+    padding-bottom: 8px;
+    flex-wrap: wrap;
 
     .instruction__text {
         display: flex;
@@ -14,9 +17,8 @@ export const StyledButtonInstruction = styled.div`
         font-size: 16px;
         line-height: 24px;
         color: #ffffff;
-        padding: 33px 10px;
         span {
-            padding: 0 15px;
+            padding: 0 8px;
             display: flex;
         }
     }

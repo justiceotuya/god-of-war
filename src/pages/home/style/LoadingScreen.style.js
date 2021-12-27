@@ -14,9 +14,14 @@ const fadeIn = keyframes`
 
 export const StyledLoadingIcon = styled(LoadingIcon)`
 	position: fixed;
-	bottom: 104px;
-	right: 120px;
+	bottom: 50px;
+	right: 50px;
 	animation: 1s ${fadeIn} infinite alternate;
+
+	@media screen and (min-width: 720px) {
+		bottom: 104px;
+		right: 120px;
+	}
 `;
 
 export const StyledLoadingScreen = styled.div`
@@ -32,6 +37,18 @@ export const StyledLoadingScreen = styled.div`
 	justify-content: center;
 
 	.text__container {
+		max-width: 970px;
+		width: 100%;
+		padding: 0 20px;
+	}
+	.instruction__text {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 36px;
+		text-align: center;
+		margin-bottom: 24px;
+
+		color: rgba(255, 255, 255, 0.9);
 	}
 	.axe__image__container {
 		text-align: center;
@@ -75,6 +92,20 @@ export const StyledLoadingScreen = styled.div`
 		}
 	}
 
+	.select__instruction {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 24px;
+		/* identical to box height */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: rgba(255, 255, 255, 0.7);
+		span {
+			padding: 0 8px;
+			display: flex;
+		}
+	}
 
 	@media screen and (min-width: 720px) {
 		.axe__image__container {

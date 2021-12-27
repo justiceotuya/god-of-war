@@ -10,8 +10,6 @@ export const StyledMenu = styled.ul`
 export const StyledSelectItem = styled.li`
 	button {
 		width: 100%;
-		font-size: 30px;
-		line-height: 45px;
 		letter-spacing: 0.04em;
 		color: ${(props) => (props.selectedMenu === props.title ? '#ffffff' : 'rgba(255, 255, 255, 0.3)')};
 		border: none;
@@ -27,7 +25,9 @@ export const StyledSelectItem = styled.li`
                     rgba(255, 255, 255, 0) 100%
                 )`};
 		text-transform: uppercase;
-		padding: 16px 20px;
+		font-size: 20px;
+		line-height: 45px;
+		padding: 8px 20px;
 		text-align: left;
 		cursor: pointer;
 		:hover,
@@ -39,6 +39,7 @@ export const StyledSelectItem = styled.li`
 
 	@media screen and (min-width: 720px) {
 		button {
+			font-size: 30px;
 			padding: 16px 120px;
 		}
 	}

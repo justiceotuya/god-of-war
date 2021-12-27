@@ -26,7 +26,7 @@ export const LoadingScreen = () => {
                     <span>
                         <R1Button />
                     </span>
-                    to select
+                    to go to the next tip
                 </p>
             </div>
             <StyledLoadingIcon />

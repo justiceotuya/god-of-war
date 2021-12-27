@@ -23,8 +23,15 @@ const select_menu = [
 ];
 
 export const GameScene = () => {
+    const [isPaused, setIsPaused] = React.useState(false);
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            setIsPaused(true);
+        }, 2000);
+    }, []);
     return (
-        <StyledGameScene>
+        <StyledGameScene isPaused={isPaused}>
             <div className="pause__container"></div>
             <div className="content__container">
                 <div className="menu__container">

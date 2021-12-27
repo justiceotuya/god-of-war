@@ -14,9 +14,9 @@ export const StyledHome = styled.main`
 		font-size: 16px;
 		line-height: 24px;
 		color: #ffffff;
-		padding: 33px 10px;
+		/* padding: 33px 10px; */
 		span {
-			padding: 0 15px;
+			padding: 0 8px;
 			display: flex;
 		}
 	}

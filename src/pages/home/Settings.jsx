@@ -45,23 +45,9 @@ export const Settings = () => {
 
                 <p className="menu__subtitle">{select_menu[selectedMenu].subtitle}</p>
 
-                <ButtonInstruction canGoBack={true} />
-                {/* <div className="select__instruction">
-                    <p className="instruction__text">
-                        Press
-                        <span>
-                            <CrossButton />
-                        </span>
-                        to select
-                    </p>
-                    <p className="instruction__text">
-                        Press
-                        <span>
-                            <CircleButton />
-                        </span>
-                        to go back
-                    </p>
-                </div> */}
+                <div className="button__container">
+                    <ButtonInstruction canGoBack={true} />
+                </div>
             </StyledSettings>
         </HomeLayout>
     );
