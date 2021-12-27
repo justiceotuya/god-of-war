@@ -12,6 +12,7 @@ export const StyledGameScene = styled.main`
 		background-image: url(${GameScene});
 		height: 100%;
 		width: 100%;
+		background-position: 22%;
 	}
 	.content__container {
 		background: rgba(0, 0, 0, 0.6);

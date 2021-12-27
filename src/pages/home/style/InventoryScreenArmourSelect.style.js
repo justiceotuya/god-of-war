@@ -1,21 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import GodOfWarFace from '../../../assets/god_of_war_face.png';
-import ChildFace from '../../../assets/childs_face.png';
-import smokeScreen from '../../../assets/smoke-screen.png';
-import { ReactComponent as LoadingIcon } from '../../../assets/loading-icon.svg';
+import styled from 'styled-components';
 import LevBadge from '../../../assets/god-badge-colored.svg';
-
-const fadeIn = keyframes`
-  0% {
-    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-  }
-  70% {
-      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-  }
-  100% {
-      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-  }
-`;
 
 export const StyledInventoryArmourItem = styled.div`
 	height: 100px;
@@ -39,7 +23,6 @@ export const StyledInventoryArmourItem = styled.div`
 	@media screen and (min-width: 600px) {
 		max-width: 156px;
 		height: 156px;
-		
 	}
 `;
 

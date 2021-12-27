@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { StyledSelectItem, StyledMenu } from './style/Menu.style';
 
-export const Menu = ({ settings, handleGetSelectedMenu }) => {
+export const Menu = ({ settings, handleGetSelectedMenu, handleMoveToPage, backScreen }) => {
     const [selectedMenu, setSelectedMenu] = useState(0);
     const buttonRef = useRef(null);
     // listen to key press and set selected menu
@@ -18,20 +18,31 @@ export const Menu = ({ settings, handleGetSelectedMenu }) => {
 
     const onKeyDown = (e) => {
         const button = document.getElementsByTagName('button');
-        //prevent focus on browser
+        console.log({ backScreen, key: e.key, handleMoveToPage });
 
-        if (e.key === 'ArrowUp') {
+        //prevent focus on browser
+        if (e.key === 'x') {
+            let screen = settings[selectedMenu].screen;
+            screen && handleMoveToPage(screen);
+        } else if (e.key === 'Escape' || e.key === 'o') {
+            console.log({ backScreen });
+            backScreen && handleMoveToPage(backScreen);
+        } else if (e.key === 'ArrowUp') {
             selectedMenu === 0 ? setSelectedMenu(settings.length - 1) : setSelectedMenu((position) => position - 1);
         } else if (e.key === 'ArrowDown') {
             selectedMenu === settings.length - 1 ? setSelectedMenu(0) : setSelectedMenu((position) => position + 1);
-        } else if (selectedMenu === settings.length - 1) {
+        } else if (selectedMenu === settings.length - 1 && e.key !== 'Enter' && e.key !== 'Tab') {
             button[0].focus();
         }
     };
 
     // if menu is selected, use that menu else toggle the menu
-    const handleSelectMenu = (menu) => {
-        setSelectedMenu(menu);
+    const handleSelectMenu = (e, menu, screen) => {
+        if (e.type === 'focus') {
+            setSelectedMenu(menu);
+        } else {
+            screen && handleMoveToPage(screen);
+        }
     };
     return (
         <StyledMenu ref={buttonRef}>
@@ -46,8 +57,8 @@ export const Menu = ({ settings, handleGetSelectedMenu }) => {
                     >
                         <button
                             type="button"
-                            onClick={() => handleSelectMenu(index)}
-                            onFocus={() => handleSelectMenu(index)}
+                            onClick={(e) => handleSelectMenu(e, index, screen)}
+                            onFocus={(e) => handleSelectMenu(e, index, screen)}
                         >
                             {title}
                         </button>

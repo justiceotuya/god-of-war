@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { StyledHome } from './Home.style';
 
 export const StyledSettings = styled.div`
 	.select__title {

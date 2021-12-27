@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import Icon from '../../../assets/hover-logo.svg';
 
-export const StyledHome = styled.main`
+export const StyledNewGameScreen = styled.main`
 	margin-top: 10%;
 	.select__instruction {
 		padding-left: 20px;

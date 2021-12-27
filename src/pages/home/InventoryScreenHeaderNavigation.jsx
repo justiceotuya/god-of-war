@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     StyledInventoryScreenHeaderNavigation,
     StyledInventoryItem,
@@ -35,14 +35,11 @@ const inventoryMenu = [
 export const InventoryScreenHeaderNavigation = () => {
     const [selectedMenu, setSelectedMenu] = useState(0);
 
-    const buttonRef = useRef(null);
-
     // listen to key press and set selected menu
     useEffect(() => {
         document.body.addEventListener('keydown', onKeyDown);
         const button = document.getElementsByTagName('button');
         //move focus to the button
-        console.log(selectedMenu);
         button[selectedMenu].focus();
         return () => {
             document.body.removeEventListener('keydown', onKeyDown);
@@ -99,7 +96,7 @@ export const InventoryScreenHeaderNavigation = () => {
                         })}
                     </ul>
                     <div className="button__control" onClick={(e) => onKeyDown(e, 'right')}>
-                        <L1Button />
+                        <R1Button />
                     </div>
                 </div>
                 <div className="game__score">

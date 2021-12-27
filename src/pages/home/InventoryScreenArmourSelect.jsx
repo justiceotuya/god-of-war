@@ -3,16 +3,16 @@ import {
     StyledInventoryScreenArmourSelect,
     StyledInventoryArmourItem,
 } from './style/InventoryScreenArmourSelect.style';
-import { ReactComponent as Arm_guard } from '../../assets/arm_guard.svg';
+import { ReactComponent as ArmGuard } from '../../assets/arm_guard.svg';
 import { ReactComponent as Gardle } from '../../assets/gardle.svg';
-import { ReactComponent as Leg_armour } from '../../assets/leg_armour.svg';
-import { ReactComponent as Shoulder_guard } from '../../assets/shoulder_guard.svg';
+import { ReactComponent as LegArmour } from '../../assets/leg_armour.svg';
+import { ReactComponent as ShoulderGuard } from '../../assets/shoulder_guard.svg';
 import { ReactComponent as Pteruges } from '../../assets/pteruges.svg';
 import { ReactComponent as CloseIcon } from '../../assets/close.svg';
 
 const selectedInventory = [
     {
-        armour: <Shoulder_guard />,
+        armour: <ShoulderGuard />,
         itemType: 'COMMON ITEM',
         itemName: 'SHOULDER GUARD OF EXILE',
         itemDescription:
@@ -39,7 +39,7 @@ const selectedInventory = [
         },
     },
     {
-        armour: <Arm_guard />,
+        armour: <ArmGuard />,
         itemType: 'COMMON ITEM',
         itemName: 'ARM GUARD OF BALDUR',
         itemDescription: 'A metallic guard that can be used for both offense and defense',
@@ -65,7 +65,7 @@ const selectedInventory = [
         },
     },
     {
-        armour: <Leg_armour />,
+        armour: <LegArmour />,
         itemType: 'COMMON ITEM',
         itemName: 'LEG ARMOUR OF HELIOS',
         itemDescription: 'Golden and powerful like its former weilder, it protects Kratos from the harsh terrains',
@@ -79,7 +79,7 @@ const selectedInventory = [
     },
 ];
 
-export const InventoryScreenArmourSelect = () => {
+export const InventoryScreenArmourSelect = ({ handleMoveToPage }) => {
     const [selectedArmour, setSelectedArmour] = useState(0);
     const [menuPosition, setMenuPosition] = useState({
         top: '0px',
@@ -147,6 +147,8 @@ export const InventoryScreenArmourSelect = () => {
             selectedArmour === selectedInventory.length - 1
                 ? setSelectedArmour(0)
                 : setSelectedArmour((position) => position + 1);
+        } else if (e.key === 'Escape' || e.key === 'o') {
+            handleMoveToPage('GameSceneScreen');
         }
     };
 

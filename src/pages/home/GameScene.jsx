@@ -6,36 +6,35 @@ import { StyledGameScene } from './style/GameScene.style';
 const select_menu = [
     {
         title: 'INVENTORY',
-        screen: 'NEW_GAME_SCREEN',
+        screen: 'InventoryScreen',
     },
     {
         title: 'SETTINGS',
-        screen: 'SETTINGS_SCREEN',
     },
     {
         title: 'ACCESSIBILITY',
-        screen: 'NEW_GAME_SCREEN',
     },
     {
         title: 'QUIT',
-        screen: 'SETTINGS_SCREEN',
+        screen: 'NewGameScreen',
     },
 ];
 
-export const GameScene = () => {
+export const GameScene = ({ handleMoveToPage }) => {
     const [isPaused, setIsPaused] = React.useState(false);
 
     React.useEffect(() => {
         setTimeout(() => {
             setIsPaused(true);
-        }, 2000);
+        }, 1000);
     }, []);
+
     return (
         <StyledGameScene isPaused={isPaused}>
             <div className="pause__container"></div>
             <div className="content__container">
                 <div className="menu__container">
-                    <Menu settings={select_menu} />
+                    <Menu settings={select_menu} handleMoveToPage={handleMoveToPage} backScreen="SettingsScreen" />
                     <div className="button__container">
                         <ButtonInstruction canGoBack /> 
                     </div>

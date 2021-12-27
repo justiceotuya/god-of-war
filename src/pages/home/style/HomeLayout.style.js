@@ -11,7 +11,6 @@ export const StyledHomeLayout = styled.main`
 	background-position: center;
 	background-position: center 0px;
 	background-size: auto 100%;
-	/* background-blend-mode: soft-light; */
 	.header {
 		display: flex;
 		justify-content: space-between;
